@@ -31,10 +31,9 @@ bookrouter.post('/findbook',function(req,res,next){
 })
 
 bookrouter.post('/getbook',function(req,res,next){
-  console.log('hi')
-  library.find({_id:req.body.id},function(err,obj){
+  console.log(req.body)
+  library.find({_id:req.body._id},function(err,obj){
     res.send(obj);
-    console.log(obj)
   })
 
 })

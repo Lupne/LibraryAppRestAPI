@@ -36,8 +36,8 @@ const Student = new Schema({
     default:'https://clipartart.com/images/profile-image-icon-clipart-1.png',
   },
   issue:{
-    type:[String],
-    default:["-1","-1","-1"],
+    type:[{_id:String,idate:String,rdate:String}],
+    default:[{_id:"-1",idate:"-1",rdate:"-1"},{_id:"-1",idate:"-1",rdate:"-1"},{_id:"-1",idate:"-1",rdate:"-1"}],
   }
 })
 
