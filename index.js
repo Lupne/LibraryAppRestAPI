@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const router = require('./models/users')
 const bookrouter = require('./models/library')
+const revrouter = require('./models/rev')
 const bodyparser = require('body-parser')
 const PORT = 4000;
 
@@ -16,6 +17,7 @@ mongoose.Promise = global.Promise;
 
 app.use(router);
 app.use(bookrouter);
+app.use(revrouter);
 
 app.use(function(err,req,res,next){
   res.status(422).send({error:err.message})

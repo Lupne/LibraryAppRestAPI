@@ -1,7 +1,7 @@
-const mongoose = requiew('mongoose')
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const review = new Schema({
+const rev = new Schema({
   title:{
     type:String,
     required:true,
@@ -19,3 +19,7 @@ const review = new Schema({
     required:true,
   }
 })
+
+const review = mongoose.model('review',rev)
+
+module.exports = review

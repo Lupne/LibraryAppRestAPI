@@ -33,7 +33,7 @@ const Student = new Schema({
   },
   dp:{
     type:String,
-    default:'https://clipartart.com/images/profile-image-icon-clipart-1.png',
+    default:'https://bootdey.com/img/Content/avatar/avatar6.png',
   },
   issue:{
     type:[{_id:String,idate:String,rdate:String}],

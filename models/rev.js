@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const bodyparser = require('body-bodyparser')
+const bodyparser = require('body-parser')
 const revrouter = express.Router()
 const review = require('../schema/review')
 
@@ -16,3 +16,5 @@ revrouter.post('/getrev',function(req,res,next){
     console.log(obj);
   })
 })
+
+module.exports = revrouter;
