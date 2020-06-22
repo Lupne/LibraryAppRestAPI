@@ -22,6 +22,7 @@ bookrouter.post('/findbook',function(req,res,next){
       temp.available = ele.available.toString().toUpperCase(),
       temp.rev = ele.rev
       temp.key = ele._id.toString()
+      temp._id = ele._id
       temp.image = ele.image
       sending.push(temp);
     })
@@ -35,6 +36,19 @@ bookrouter.post('/getbook',function(req,res,next){
   library.find({_id:req.body._id},function(err,obj){
     res.send(obj);
   })
+})
+
+bookrouter.put('/addrating',function(req,res,next){
+  let id=req.body.id;
+  let rating=req.body.rating
+  library.findOne({_id:req.body.id},function(err,obj){
+    library.findOneAndUpdate({_id:id},{rating:Number(obj.rating)+Number(rating),rev:Number(obj.rev)+1}).then(function(){
+      library.findOne({_id:id},function(error,object){
+        console.log(object)
+      })
+    })
+  })
+
 
 })
 
